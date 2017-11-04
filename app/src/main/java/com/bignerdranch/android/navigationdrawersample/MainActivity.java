@@ -2,13 +2,9 @@ package com.bignerdranch.android.navigationdrawersample;
 
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 
-import android.support.v4.app.FragmentTransaction;
 import android.app.Fragment;
 
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -75,16 +71,16 @@ public class MainActivity extends AppCompatActivity
    Fragment fragment = null;
     switch (id) {
       case R.id.nav_home:
-        fragment = new Menu1();
+        fragment = new Home1();
         break;
       case R.id.nav_day:
-        fragment = new Menu2();
+        fragment = new Day2();
         break;
       case R.id.nav_coach:
-        fragment = new Menu3();
+        fragment = new Coach3();
         break;
       case R.id.nav_client:
-        fragment = new Menu4();
+        fragment = new Client4();
         break;
     }
     if (fragment != null) {

@@ -6,18 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Menu4 extends Fragment {
+public class Client4 extends Fragment {
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-   return inflater.inflate(R.layout.menu4, container, false);
+   return inflater.inflate(R.layout.client4, container, false);
   }
 
   @Override
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    getActivity().setTitle("Menu 4");
+    getActivity().setTitle("Client Stats");
   }
 }
