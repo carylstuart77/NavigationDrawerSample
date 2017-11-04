@@ -6,11 +6,13 @@
 
   <string name="action_settings">Settings</string>
 
-  <array name="goal">
+  <string name="goal_prompt">Choose Workout Goal</string>
+
+  <string-array name="goal_arrays">
     <item>Muscle Mass</item>
     <item>Weight Loss</item>
     <item>Weight Gain</item>
     <item>Tone Muscle</item>
     <item>Injury Healing</item>
-  </array>
+  </string-array>
 </resources>

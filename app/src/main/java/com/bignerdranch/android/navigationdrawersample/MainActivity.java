@@ -1,6 +1,5 @@
 package com.bignerdranch.android.navigationdrawersample;
 
-
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -49,9 +48,9 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
 
-
-
-    //creating a database
+    /**
+     * SQLite Database
+     */
     mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
     createTable();
     spinnerGoal = (Spinner) findViewById(R.id.spinnerGoal);
@@ -69,6 +68,7 @@ public class MainActivity extends AppCompatActivity
         + ");";
     mDatabase.execSQL(sql);
   }
+
 
   @Override
   public void onBackPressed() {
@@ -104,7 +104,10 @@ public class MainActivity extends AppCompatActivity
 
   private void displaySelectedScreen(int id) {
     //FragmentManager fragment = getSupportFragmentManager();
+
    Fragment fragment = null;
+    id = getIntent().getIntExtra("position", id);
+
     switch (id) {
       case R.id.nav_home:
         fragment = new Home1();
@@ -124,6 +127,8 @@ public class MainActivity extends AppCompatActivity
       ft.replace(R.id.content_main, fragment);
       ft.commit();
     }
+
+
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     drawer.closeDrawer(GravityCompat.START);
   }

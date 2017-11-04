@@ -18,6 +18,6 @@ public class Client4 extends Fragment {
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    getActivity().setTitle("Client Stats");
+    getActivity().setTitle("Client Statistics");
   }
 }
