@@ -1,6 +1,7 @@
 package com.bignerdranch.android.navigationdrawersample;
 
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import android.app.Fragment;
@@ -13,9 +14,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
+
+  public static final String DATABASE_NAME = "mydatabase";
+
+
+  SQLiteDatabase mDatabase;
+
+  EditText editTextName;
+  Spinner spinnerGoal;
+
+  /**
+   * On Create
+   * @param savedInstanceState
+   */
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +48,26 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
+
+
+
+    //creating a database
+    mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
+    createTable();
+    spinnerGoal = (Spinner) findViewById(R.id.spinnerGoal);
+  }
+
+  private void createTable() {
+    String sql = "CREATE TABLE client (\n"
+        + "    id INTEGER NOT NULL CONSTRAINT client_pk PRIMARY KEY AUTOINCREMENT,\n"
+        + "    name varchar(200) NOT NULL,\n"
+        + "    goal varchar(200) NOT NULL,\n"
+        + "    entrydate datetime NOT NULL,\n"
+        + "    weight double NOT NULL,\n"
+        + "    height double NOT NULL,\n"
+        + "    bmi double NOT NULL\n"
+        + ");";
+    mDatabase.execSQL(sql);
   }
 
   @Override

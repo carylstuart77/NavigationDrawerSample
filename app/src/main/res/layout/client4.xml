@@ -36,7 +36,7 @@
       android:text="Select Training Goal" />
 
     <Spinner
-      android:id="@+id/spinnerDepartment"
+      android:id="@+id/spinnerGoal"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"/>
       <!--android:entries="@array/departments" -->

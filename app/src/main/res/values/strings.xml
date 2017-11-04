@@ -1,8 +1,16 @@
 <resources>
-  <string name="app_name">NavigationDrawer</string>
+  <string name="app_name">My+Coach+And+I</string>
 
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
 
   <string name="action_settings">Settings</string>
+
+  <array name="goal">
+    <item>Muscle Mass</item>
+    <item>Weight Loss</item>
+    <item>Weight Gain</item>
+    <item>Tone Muscle</item>
+    <item>Injury Healing</item>
+  </array>
 </resources>
